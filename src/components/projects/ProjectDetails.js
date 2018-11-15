@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class ProjectDetails extends Component {
   render() {
-    console.log(this.props);
+    console.log(this.props.match.params.id);
     return (
       <div className="container section project-details">
         <div className="card z-depth-0">
