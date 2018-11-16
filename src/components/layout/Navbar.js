@@ -6,12 +6,13 @@ import {connect} from 'react-redux';
 
 class Navbar extends Component {
   render() {
+    const {auth} = this.props;
+    const links = auth.uid ? <SignedInLinks/> : <SignedOutLinks/>
     return (
       <nav className="nav-wrapper grey darken-3">
         <div className="container">
           <Link to="/" className="brand-logo">MarioPlan</Link>
-          <SignedInLinks />
-          <SignedOutLinks />
+          { links }
         </div>
       </nav>
     );
@@ -19,7 +20,9 @@ class Navbar extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
+  return {
+    auth : state.firebase.auth
+  }
 }
 
 export default connect(mapStateToProps)(Navbar);
