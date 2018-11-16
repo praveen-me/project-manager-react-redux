@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 class ProjectList extends Component {
   render() {
     const {projects} = this.props;
-    console.log(projects)
+    
     return (
       <div className="project-list section">
         {

@@ -18,6 +18,9 @@ class App extends Component {
             <Route path="/signin" component={SignIn}/>
             <Route path="/signup" component={SignUp}/>
             <Route path="/create" component={CreateProject} />
+            <Route render={() => {
+              return <h1 className="red-text center">404 : Page Not Found</h1>
+            }}/>
           </Switch>
         </div>
       </BrowserRouter>
