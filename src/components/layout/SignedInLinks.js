@@ -10,11 +10,12 @@ class SignedInLinks extends Component {
   }
   
   render() {
+    const {profile} = this.props;
     return (
       <ul className="right">
         <li><NavLink to="/create">New Project</NavLink></li>
         <li><NavLink to="/" onClick={this.handleClick}>Log Out</NavLink></li>
-        <li><NavLink to="/" className="btn btn-floating pink lighten-1">NN</NavLink></li>
+        <li><NavLink to="/" className="btn btn-floating pink lighten-1">{profile.initials}</NavLink></li>
       </ul>
     );
   }
